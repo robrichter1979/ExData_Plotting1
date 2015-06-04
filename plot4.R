@@ -1,7 +1,7 @@
 library(sqldf)
 data<-read.csv.sql("household_power_consumption.txt", sep=";",sql = "select * from file where Date in ('1/2/2007','2/2/2007' )" )
 
-## replacing the calender date by proper one (do I really need it?)
+## replacing the calender date by proper one 
 
 data[data=='1/2/2007']<-'2007-02-01'
 data[data=='2/2/2007']<-'2007-02-02'
@@ -30,7 +30,7 @@ plot(data$fulltime,data$Global_active_power, ylab='Global Active Power', xlab=''
 
 ## Plot 2 
 
-plot(data$fulltime, data$Voltage, type='l', lwd='1', ylab='Voltage', xlab='datetime')
+plot(data$fulltime, data$Voltage, type='l', lwd=1, ylab='Voltage', xlab='datetime')
 
 ## Plot 3
 
@@ -43,7 +43,7 @@ legend('topright', lty=1, col=c('black', 'blue','red'), legend=c("Sub_metering_1
 
 ## Plot 4
 
-plot(data$fulltime, data$Global_reactive_power, type='l', lwd='1', ylab='Global_reactive_power', xlab='datetime')
+plot(data$fulltime, data$Global_reactive_power, type='l', lwd=1, ylab='Global_reactive_power', xlab='datetime')
 
 
 ## finalizing the creation of theplot1. png

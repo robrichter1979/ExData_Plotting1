@@ -3,7 +3,7 @@
 library(sqldf)
 data<-read.csv.sql("household_power_consumption.txt", sep=";",sql = "select * from file where Date in ('1/2/2007','2/2/2007' )" )
 
-## replacing the calender date by proper one (do I really need it?)
+## replacing the calender date by proper one
 
 data[data=='1/2/2007']<-'2007-02-01'
 data[data=='2/2/2007']<-'2007-02-02'
